@@ -1,1 +1,1 @@
-FOR /F "skip=1"  %%x IN ('adb devices') DO start adb -s %%x %*
+for /f "tokens=1" %%a in ('adb devices ^| findstr /r "device$"') do adb -s %%a %*
